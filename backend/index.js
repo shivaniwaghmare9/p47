@@ -1,23 +1,23 @@
 
-// const express=require("express");
-// const app=express();
-// const dataRoute=require("./routes/dataRoute")
-// const mongoose=require("mongoose");
-// const bodyparser=require("body-parser");
+const express=require("express");
+const app=express();
+const dataRoute=require("./routes/dataRoute")
+const mongoose=require("mongoose");
+const bodyparser=require("body-parser");
 
-// mongoose.connect("mongodb+srv://shivaniw69:QrGsyB2168Rrx9Na@cluster0.fyrj258.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
-//     console.log("Database Successfully Connected")
-// })
+mongoose.connect("mongodb+srv://shivaniw69:QrGsyB2168Rrx9Na@cluster0.fyrj258.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
+    console.log("Database Successfully Connected")
+})
 
-// //Bodyparser middleware
-// app.use(bodyparser.urlencoded({extended:true}));
-// app.use(bodyparser.json());
+//Bodyparser middleware
+app.use(bodyparser.urlencoded({extended:true}));
+app.use(bodyparser.json());
 
-// app.use("/",dataRoute)
+app.use("/",dataRoute)
 
-// app.listen(4000,()=>{
-//     console4.log("Server is running on port 3000")
-// })
+app.listen(4000,()=>{
+    console4.log("Server is running on port 3000")
+})
 
 
 
@@ -91,45 +91,45 @@
 
 //==========================================================MIDDALEWARE(PATH MIDDALEWARE)==================================================================================
 
-const express=require("express");
-const app=express();
-const bodyparser=require("body-parser");
-const errorHandling=require("./Middleware/errhandleMidware")
-const cors = require("cors");
+// const express=require("express");
+// const app=express();
+// const bodyparser=require("body-parser");
+// const errorHandling=require("./Middleware/errhandleMidware")
+// const cors = require("cors");
 
 
-//Bodyparser middleware
-app.use(bodyparser.urlencoded({extended:true}));
-app.use(bodyparser.json());
-app.use(cors());
+// //Bodyparser middleware
+// app.use(bodyparser.urlencoded({extended:true}));
+// app.use(bodyparser.json());
+// app.use(cors());
 
-app.get("/",(req,res)=>{
-    console.log("something went wrong")
-    res.send("okk")
-})
-app.get("/about",(req,res,next)=>{
-    console.log("hii this is my about page")
-    const err=new Error("about page error")
-    next(err)
-    res.send("OKK")
-})
+// app.get("/",(req,res)=>{
+//     console.log("something went wrong")
+//     res.send("okk")
+// })
+// app.get("/about",(req,res,next)=>{
+//     console.log("hii this is my about page")
+//     const err=new Error("about page error")
+//     next(err)
+//     res.send("OKK")
+// })
 
-app.get("/service",(req,res)=>{
-    try {
-    console.log("hii this is my service page")
-     const err=new Error("service page error")
-   //  res.status(200).send("service OKK")
-     throw err
+// app.get("/service",(req,res)=>{
+//     try {
+//     console.log("hii this is my service page")
+//      const err=new Error("service page error")
+//    //  res.status(200).send("service OKK")
+//      throw err
     
-    } catch  {
-        console.log(Error)
-        res.status(500).send("Internal server error")
-    }
+//     } catch  {
+//         console.log(Error)
+//         res.status(500).send("Internal server error")
+//     }
     
-})
+// })
 
-app.use(errorHandling)
+// app.use(errorHandling)
 
-app.listen(3000,()=>{
-    console.log("Server is running on port 3000")
-}) 
+// app.listen(3000,()=>{
+//     console.log("Server is running on port 3000")
+// }) 
