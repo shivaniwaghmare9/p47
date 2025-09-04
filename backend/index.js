@@ -9,15 +9,15 @@ mongoose.connect("mongodb+srv://shivaniw69:QrGsyB2168Rrx9Na@cluster0.fyrj258.mon
     console.log("Database Successfully Connected")
 })
 
-//Bodyparser middleware
-app.use(bodyparser.urlencoded({extended:true}));
-app.use(bodyparser.json());
+// //Bodyparser middleware
+// app.use(bodyparser.urlencoded({extended:true}));
+// app.use(bodyparser.json());
 
-app.use("/",dataRoute)
+// app.use("/",dataRoute)
 
-app.listen(4000,()=>{
-    console4.log("Server is running on port 3000")
-})
+// app.listen(4000,()=>{
+//     console4.log("Server is running on port 3000")
+// })
 
 
 
